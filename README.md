@@ -1,10 +1,10 @@
-# **🎵🎵🎵Lofi_Music_Generator_by_midi🎵🎵🎵**
+# **🎵🎵🎵Lofi_Music_Generator_with_midi🎵🎵🎵**
 
 MIDIデータで学習された音楽モデルからLofi音楽を生成します
 ## 動作環境
     * Google Colabで動作します
     * Google Driveはマウントするものとします
-##　ルール
+## ルール
     * コメントは日本語で記述してください
     * 各セルの先頭には「#@title [セルのタイトル]を記述してください
     * 進捗がわかりやすいようにprint文で出力してください
@@ -15,8 +15,8 @@ MIDIデータで学習された音楽モデルからLofi音楽を生成します
 3. 【Google Drive連携】データ保存用
 4. 【データセット準備】複数のデータセットをダウンロード（Hugging Faceから取得）
     * MAESTROデータセット（クラシックピアノ演奏）
-    * Lakh Pianoroll Dataset（17万曲の多ジャンル音楽）
-    * MusicNetデータセット（クラシック音楽）
+    * Lakh Pianoroll Dataset（17万曲の多ジャンル音楽）epr-labs/lakh-lmd-full
+    * MusicNetデータセット（クラシック音楽）https://www.kaggle.com/datasets/imsparsh/musicnet-dataset
     * Giant MIDI Pianoデータセット（1万曲以上のピアノ演奏）
     * フリーのLofi/ChillホップMIDIコレクション
 5. 【データ前処理】MIDIファイルを統一フォーマットに変換
@@ -34,3 +34,35 @@ MIDIデータで学習された音楽モデルからLofi音楽を生成します
 1. 【カスタマイズ】Lofi音楽のスタイル調整
 2. 【使用例】Lofi音楽を生成して再生
 
+
+# **🎵🎵🎵Lofi_Music_Generator_with_mp3🎵🎵🎵**
+
+# MusicGenモデルをMMP3データで学習し、学習したモデルからLofi音楽を生成します
+## 動作前提
+  * Google Colabで動作します
+  * Google Driveはマウントするものとします
+  * ベースモデルは「facebook/musicgen-large」とし、hugging faceから取得します
+  * 学習用のデータセットは「vikhyatk/lofi」とし、hugging faceから取得します
+  * データセットが大きいため、ストリームで学習するようにしてください
+## ルール
+  * コメントは日本語で記述してください
+  * 各セルの先頭には「#@title [セルのタイトル」を記述してください
+  * 進捗がわかりやすいようにprint文で出力してください
+  * コメントはわかりやすく丁寧に記述してください
+## 処理（学習フェーズ）
+  1. 【環境設定】必要なライブラリのインストール
+  2. 【ライブラリ読み込み】必要なモジュールをインポート
+  3. 【Google Drive連携】データ保存のためにマウント
+  4. 【データセット準備】データセットをダウンロード（Hugging Faceから取得）
+  5. 【データ前処理】データセットを事前処理する
+  6. 【MusicGen】モデル構築、すでにGoogle Driveにモデルがある場合は、そちらを利用する
+  7. 【学習実行】モデルの訓練
+  8. 【音楽生成】Lofi音楽を生成
+  9. 【モデル保存】学習済モデルをGoogleドライブに保存
+  10. 生成した音楽をMP3形式で保存
+## 処理（音楽再生）
+  1. 【MP3選択】MP3のリストを表示して番号を入力待ち
+  2. 【音楽再生】入力された番号の音楽を試聴
+## 処理（音楽生成）
+  1. 【カスタマイズ】Lofi音楽のスタイル調整
+  2. 【使用例】Lofi音楽を生成して再生
